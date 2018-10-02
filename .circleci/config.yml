@@ -18,16 +18,16 @@ jobs:
         paths:
         - ~/app-name/node_modules/
     - run:
-        name: install dependencies
+        name: Install dependencies
         command: npm install
     - run:
         name: Build library
-        command: npm run build 
+        command: npm run build
     - run:
         name: Authenticate with registry
         command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/APP/.npmrc
     - run:
-        name: npm publish
+        name: Publish to https://npmjs.org
         command: npm publish ./dist/ngx-currency-formatter
 
 workflows:
