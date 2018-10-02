@@ -7,7 +7,7 @@ properties.
   
 
 ### Demo 
-https://druckreich.github.io/ng-currency-formatter
+https://druckreich.github.io/ngx-currency-formatter-library
 
 ## How to Use
 
