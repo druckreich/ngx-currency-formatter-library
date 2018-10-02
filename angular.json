@@ -121,6 +121,41 @@
           }
         }
       }
+    },
+    "ngx-currency-formatter": {
+      "root": "projects/ngx-currency-formatter",
+      "sourceRoot": "projects/ngx-currency-formatter/src",
+      "projectType": "library",
+      "prefix": "NgxCf",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-currency-formatter/tsconfig.lib.json",
+            "project": "projects/ngx-currency-formatter/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-currency-formatter/src/test.ts",
+            "tsConfig": "projects/ngx-currency-formatter/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-currency-formatter/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-currency-formatter/tsconfig.lib.json",
+              "projects/ngx-currency-formatter/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ngx-currency-formatter-library"
