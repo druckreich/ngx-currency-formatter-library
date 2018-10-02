@@ -1,27 +1,64 @@
-# NgxCurrencyFormatterLibrary
+# NgxCurrencyFormatter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+I made this library because i needed a component (as simple as possible) that just renders the 
+value in my input field as if it was piped through the currency pipe.
+It does accept the options code and digit which are passed throught to the durrency pipes 
+properties.
+  
 
-## Development server
+### Demo 
+https://druckreich.github.io/ng-currency-formatter
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## How to Use
 
-## Code scaffolding
+##### How to install dependencies
+```` Bash
+npm install ng-currency-formatter
+````
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+##### How to import Module
+```` Typescript
+import {NgxCurrencyFormatterModule} from 'ng-currency-formatter'
 
-## Build
+@NgModule({
+  imports: [
+    NgxCurrencyFormatterModule,
+  ]
+})
+````
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+##### How to use formatter on input
+```` HTML
+<input type="text" ngxCurrencyFormatter [(ngModel)]="value">
+````
 
-## Running unit tests
+##### How to use different locale and digit
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```` HTML
+<input type="text" ngxCurrencyFormatter [code]="'EUR'">
+````
 
-## Running end-to-end tests
+```` Code
+<input type="text" ngxCurrencyFormatter [digit]="'1.4'">
+````
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+##### How to use validator on input
+```` HTML
+<input type="text" ngxCurrencyFormatter [(ngModel)]="value" ngxCurrencyValidator>
+````
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+##### How to use custom validator error message
+```` Typescript
+@NgModule({
+  providers: [
+    {provide: 'ngxCurrencyConfig', useValue: {message: 'I do not like this number, Sir!'}},
+  ]
+})
+````
+
+ 
+
+
+
+
