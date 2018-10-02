@@ -4,13 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build ngx-currency-formatter",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs": "ng build --prod --output-path docs --base-href /ngx-currency-formatter-library/docs && git add docs && git commit -m 'update docs' && git push"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^6.1.0",
     "@angular/common": "^6.1.0",

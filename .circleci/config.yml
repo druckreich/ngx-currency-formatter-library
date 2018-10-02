@@ -13,11 +13,6 @@ jobs:
         keys:
         - dependency-cache-{{ checksum "package.json" }}
         - dependency-cache-
-    - run:
-        name: check versions for node and npm
-        command: |
-          node --version
-          npm --version
     - save_cache:
         key: dependency-cache-{{ checksum "package.json" }}
         paths:
