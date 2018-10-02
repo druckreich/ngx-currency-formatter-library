@@ -21,11 +21,11 @@ jobs:
         name: install dependencies
         command: npm install
     - run:
-        name: build project
-        command: npm run build
+        name: Build library
+        command: npm run build ngx-currency-formatter
     - run:
         name: go to /dist
-        command: cd ~/APP/dist
+        command: cd ~/APP/dist/ngx-currency-formatter
     - run:
         name: Authenticate with registry
         command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/APP/.npmrc
