@@ -1,16 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {registerLocaleData} from "@angular/common";
+import localeDe from '@angular/common/locales/de';
+import {LOCALE_ID, NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppComponent} from './app.component';
+import {NgxCurrencyFormatterModule} from '../../projects/ngx-currency-formatter/src/lib/ngx-currency-formatter.module';
 
-import { AppComponent } from './app.component';
+registerLocaleData(localeDe, 'de-DE');
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    NgxCurrencyFormatterModule.forRoot(null)
   ],
-  providers: [],
+  exports: [],
+  providers: [
+    {provide: LOCALE_ID, useValue: 'de-DE'},
+    {provide: 'ngxCurrencyConfig', useValue: {message: 'Das ist keine gültige Zahl'}},
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

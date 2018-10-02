@@ -30,7 +30,7 @@ export class NgxNumberValidatorDirective implements Validator {
 
   validator: Function;
 
-  constructor(@Inject('ngCurrencyConfig') config: NgxCurrencyConfig) {
+  constructor(@Inject('ngxCurrencyConfig') config: NgxCurrencyConfig) {
     this.validator = validateNumberFactory(config);
   }
 
