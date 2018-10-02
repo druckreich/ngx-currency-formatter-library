@@ -22,7 +22,7 @@ jobs:
         command: npm install
     - run:
         name: Build library
-        command: ng build ngx-currency-formatter
+        command: npm run build 
     - run:
         name: Authenticate with registry
         command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/APP/.npmrc
