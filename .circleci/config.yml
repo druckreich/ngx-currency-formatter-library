@@ -30,7 +30,7 @@ jobs:
         command: npm run build
     - run:
         name: go to /dist
-        command: cd ~/APP/dist/custom-lib
+        command: cd ~/APP/dist
     - run:
         name: Authenticate with registry
         command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/APP/.npmrc
@@ -41,4 +41,5 @@ jobs:
 workflows:
   version: 2
   build-and-deploy:
+    jobs:
     - build
